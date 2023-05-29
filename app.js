@@ -27,8 +27,18 @@ const newTextNode= (text)=> {
 
 //CRUD fucntions
 const saveAlert=()=>{
+     data.push(new Object());
+     let last=data.length-1; 
+    let allInputs= document.querySelectorAll('td>input');
+     for(input of allInputs){      
+      //console.log(data, last); 
+     data[last][input.getAttribute('placeholder')]=input.value;                  
 
-    alert(`New user was saved!`)
+     }
+     console.log(data[last]);
+    
+
+    alert(`New user ${allInputs[0].value} was saved!`)
 }
 
 const addUser=(data, selector) => {
@@ -55,6 +65,7 @@ let rootTable= document.querySelector(selector);
                         input.insertAdjacentElement('afterend',saveButton1);
 
                        saveButton1.addEventListener("click",saveAlert);
+                      
                     }
 
                     return inputs;
