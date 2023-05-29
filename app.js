@@ -38,7 +38,7 @@ const saveAlert=()=>{
      console.log(data[last]);
     
 
-    alert(`New user ${allInputs[0].value} was saved!`)
+    alert(`New user ${data[last].name} was saved!`);
 }
 
 const addUser=(data, selector) => {
